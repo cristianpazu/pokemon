@@ -1,0 +1,19 @@
+<h1>Buscar Pelicula<small>{{texto}}</small></h1>
+<hr>
+<div class="row" *ngIf="pooke.length==0">
+    <div class="col">
+        <div class="alert aler-info" role="alert">
+            no se encontro el pokemon {{texto}}
+        </div>
+    </div>
+
+</div>
+
+<div class="card" style="width: 18rem;" *ngFor="let poke of pooke">
+    <img [src]="poke.sprites.front_default" class="card-img-top" alt="...">
+    <div class="card-header">Productos</div>
+    <div class="card-body">
+        <h5 class="card-title">nombre: {{poke.name}}</h5>
+        <p class="card-text">altura:{{poke.height}}</p>
+        <p class="card-text">power:{{poke.stats[1].base_stat}}</p>
+    </div>
